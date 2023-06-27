@@ -10,7 +10,7 @@ import theme from './src/theme';
 import { Text } from 'react-native';
 import { Button } from './src/components/Button';
 
-export default function App() {
+export default function App(): JSX.Element {
   const [fontsLoaded] = useFonts({ NunitoSans_400Regular, NunitoSans_700Bold })
 
   return (

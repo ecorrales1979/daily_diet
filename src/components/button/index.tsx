@@ -8,7 +8,7 @@ interface Props extends TouchableOpacityProps, ButtonProps {
   icon?: keyof typeof Feather.glyphMap
 }
 
-export function Button({ icon, label, variant, ...rest }: Props) {
+export function Button({ icon, label, variant, ...rest }: Props): JSX.Element {
   return (
     <Container variant={variant} {...rest}>
       {icon && (
