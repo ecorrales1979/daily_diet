@@ -25,5 +25,21 @@
       }
     },
     "rules": {
+      "@typescript-eslint/no-misused-promises": "off",
+      "@typescript-eslint/no-throw-literal": "off",
+      "@typescript-eslint/strict-boolean-expressions": "off",
+      "import-helpers/order-imports": [
+        "warn",
+        {
+          "newlinesBetween": "always",
+          "groups": [
+              "module",
+              ["sibling", "index", "parent"],
+              "/^@\//"
+          ],
+          "alphabetize": { "order": "asc", "ignoreCase": true }
+        }
+      ],
+      "react/react-in-jsx-scope": "off"
     }
 }
