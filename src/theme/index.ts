@@ -16,11 +16,11 @@ export default {
 
     redLight: '#F4E6E7',
     redMid: '#F3BABD',
-    redDark: '#BF3B44',
+    redDark: '#BF3B44'
   },
   fontFamily: {
     regular: 'NunitoSans_400Regular',
-    bold: 'NunitoSans_700Bold',
+    bold: 'NunitoSans_700Bold'
   },
   fontSize: {
     xs: 12,
@@ -28,6 +28,6 @@ export default {
     md: 16,
     lg: 18,
     xl: 24,
-    xxl: 32,
-  },
-};
+    xxl: 32
+  }
+}
