@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components/native'
 import { Feather } from '@expo/vector-icons'
 
-import theme from '@/theme'
-
 type CardType = 'default' | 'good' | 'bad'
 
 interface TypeProps {
@@ -13,31 +11,16 @@ export interface InfoCardProps extends TypeProps {
   showIcon?: boolean
 }
 
-interface ColorsProps {
-  bg: string
-  details?: string
-}
-
-const colors: Record<CardType, ColorsProps> = {
-  default: {
-    bg: theme.palette.gray_6
-  },
-  good: {
-    bg: theme.palette.greenLight,
-    details: theme.palette.greenDark
-  },
-  bad: {
-    bg: theme.palette.redLight,
-    details: theme.palette.redDark
-  }
-}
-
 export const Container = styled.View<InfoCardProps>`
   position: relative;
   align-items: center;
   border-radius: 8px;
   ${({ showIcon, theme, type }) => css`
-    background-color: ${colors[type].bg};
+    background-color: ${type === 'default'
+      ? theme.palette.gray_6
+      : type === 'good'
+      ? theme.palette.greenLight
+      : theme.palette.redLight};
     padding: ${showIcon ? 20 : 16}px 16px;
     gap: ${showIcon ? 4 : 8}px;
   `}
