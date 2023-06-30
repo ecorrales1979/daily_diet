@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components/native'
 
-import theme from '@/theme'
-
 type ButtonBooleanType = 'yes' | 'no'
 
 interface TypeProps {
@@ -10,12 +8,6 @@ interface TypeProps {
 
 export interface ButtonBooleanProps extends TypeProps {
   active: boolean
-}
-
-const colors = {
-  default: { bg: theme.palette.gray_6 },
-  yes: { bg: theme.palette.greenLight, details: theme.palette.greenDark },
-  no: { bg: theme.palette.redLight, details: theme.palette.redDark }
 }
 
 export const Container = styled.TouchableOpacity<ButtonBooleanProps>`
@@ -27,18 +19,33 @@ export const Container = styled.TouchableOpacity<ButtonBooleanProps>`
   border-radius: 6px;
   padding: 16px;
   ${({ active, theme, type }) => css`
-    background-color: ${!active ? colors.default : colors[type].bg};
-    border: 1px solid ${!active ? colors.default : colors[type].details};
+    background-color: ${!active
+      ? theme.palette.gray_6
+      : type === 'yes'
+      ? theme.palette.greenLight
+      : theme.palette.redLight};
+    border: 1px solid
+      ${!active
+        ? theme.palette.gray_6
+        : type === 'yes'
+        ? theme.palette.greenDark
+        : theme.palette.redDark};
   `}
 `
 
-export const Icon = styled.View<TypeProps>`
+export const IconDefault = styled.View`
   border-radius: 4px;
   width: 8px;
   height: 8px;
-  ${({ type }) => css`
-    background-color: ${colors[type].details};
-  `}
+  background-color: ${({ theme }) => theme.palette.gray_6};
+`
+
+export const IconGood = styled(IconDefault)`
+  background-color: ${({ theme }) => theme.palette.greenDark};
+`
+
+export const IconBad = styled(IconDefault)`
+  background-color: ${({ theme }) => theme.palette.redDark};
 `
 
 export const Label = styled.Text`
