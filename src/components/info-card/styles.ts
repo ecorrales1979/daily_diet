@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/native'
 import { Feather } from '@expo/vector-icons'
 
-import theme from '../../theme'
+import theme from '@/theme'
 
 type CardType = 'default' | 'good' | 'bad'
 

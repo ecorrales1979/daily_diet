@@ -1,7 +1,7 @@
-import { Text } from 'react-native';
+import { Text } from 'react-native'
 
-import { ButtonBooleanProps, Container, Icon, Label } from './styles';
-import { capitalize } from '../../utils/formatters';
+import { ButtonBooleanProps, Container, Icon, Label } from './styles'
+import { capitalize } from '@/utils/formatters'
 
 type Props = ButtonBooleanProps
 

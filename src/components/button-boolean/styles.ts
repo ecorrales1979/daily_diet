@@ -1,22 +1,22 @@
-import styled, { css } from 'styled-components/native';
+import styled, { css } from 'styled-components/native'
 
-import theme from '../../theme';
+import theme from '@/theme'
 
-type ButtonBooleanType = 'yes' | 'no';
+type ButtonBooleanType = 'yes' | 'no'
 
 interface TypeProps {
-  type: ButtonBooleanType;
+  type: ButtonBooleanType
 }
 
 export interface ButtonBooleanProps extends TypeProps {
-  active: boolean;
+  active: boolean
 }
 
 const colors = {
   default: { bg: theme.palette.gray_6 },
   yes: { bg: theme.palette.greenLight, details: theme.palette.greenDark },
-  no: { bg: theme.palette.redLight, details: theme.palette.redDark },
-};
+  no: { bg: theme.palette.redLight, details: theme.palette.redDark }
+}
 
 export const Container = styled.TouchableOpacity<ButtonBooleanProps>`
   flex-direction: row;
@@ -30,7 +30,7 @@ export const Container = styled.TouchableOpacity<ButtonBooleanProps>`
     background-color: ${!active ? colors.default : colors[type].bg};
     border: 1px solid ${!active ? colors.default : colors[type].details};
   `}
-`;
+`
 
 export const Icon = styled.View<TypeProps>`
   border-radius: 4px;
@@ -39,11 +39,11 @@ export const Icon = styled.View<TypeProps>`
   ${({ type }) => css`
     background-color: ${colors[type].details};
   `}
-`;
+`
 
 export const Label = styled.Text`
   ${({ theme }) => css`
     font-size: ${theme.fontSize.sm}px;
     font-family: ${theme.fontFamily.bold};
   `}
-`;
+`

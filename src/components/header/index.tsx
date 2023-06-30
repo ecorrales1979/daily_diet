@@ -1,6 +1,6 @@
-import { Avatar, Container, Logo } from './styles';
+import { Avatar, Container, Logo } from './styles'
 
-import LogoImg from '../../assets/logo.png'
+import LogoImg from '@/assets/logo.png'
 
 export function Header(): JSX.Element {
   return (
