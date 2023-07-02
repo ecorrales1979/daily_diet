@@ -1,6 +1,6 @@
-import { Container, Icon, InfoCardProps, Subtitle, Title } from './styles'
+import * as S from './styles'
 
-interface Props extends InfoCardProps {
+interface Props extends S.InfoCardProps {
   title: string
   subtitle: string
 }
@@ -12,10 +12,10 @@ export function InfoCard({
   type
 }: Props): JSX.Element {
   return (
-    <Container type={type} showIcon={showIcon}>
-      {showIcon && <Icon name="arrow-up-right" type={type} />}
-      <Title type={type}>{title}</Title>
-      <Subtitle>{subtitle}</Subtitle>
-    </Container>
+    <S.Container type={type} showIcon={showIcon}>
+      {showIcon && <S.Icon name="arrow-up-right" type={type} />}
+      <S.Title type={type}>{title}</S.Title>
+      <S.Subtitle>{subtitle}</S.Subtitle>
+    </S.Container>
   )
 }

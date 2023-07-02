@@ -1,23 +1,22 @@
 import { Text } from 'react-native'
 
-import {
-  ButtonBooleanProps,
-  Container,
-  IconBad,
-  IconDefault,
-  IconGood,
-  Label
-} from './styles'
+import * as S from './styles'
 import { capitalize } from '@/utils/formatters'
 
-type Props = ButtonBooleanProps
+type Props = S.ButtonBooleanProps
 
 export function ButtonBoolean({ active, type }: Props): JSX.Element {
   return (
-    <Container active={active} type={type}>
-      {!active ? <IconDefault /> : type === 'yes' ? <IconGood /> : <IconBad />}
-      <Label>{capitalize(type)}</Label>
+    <S.Container active={active} type={type}>
+      {!active ? (
+        <S.IconDefault />
+      ) : type === 'yes' ? (
+        <S.IconGood />
+      ) : (
+        <S.IconBad />
+      )}
+      <S.Label>{capitalize(type)}</S.Label>
       <Text></Text>
-    </Container>
+    </S.Container>
   )
 }

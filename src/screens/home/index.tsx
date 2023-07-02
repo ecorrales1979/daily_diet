@@ -3,11 +3,11 @@ import React from 'react'
 import { Header } from '@/components/header'
 import { InfoCard } from '@/components/info-card'
 import Meals from '@/components/meals'
-import { Container } from './styles'
+import * as S from './styles'
 
 export function Home(): JSX.Element {
   return (
-    <Container>
+    <S.Container>
       <Header />
       <InfoCard
         title="90,86%"
@@ -16,6 +16,6 @@ export function Home(): JSX.Element {
         showIcon
       />
       <Meals />
-    </Container>
+    </S.Container>
   )
 }
