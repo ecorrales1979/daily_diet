@@ -7,15 +7,20 @@ interface TypeProps {
   type: CardType
 }
 
-export interface InfoCardProps extends TypeProps {
-  showIcon?: boolean
+interface IconProps {
+  showIcon: boolean
+}
+
+export interface InfoCardProps extends IconProps, TypeProps {
+  fullWidth: boolean
 }
 
 export const Container = styled.View<InfoCardProps>`
   position: relative;
   align-items: center;
   border-radius: 8px;
-  ${({ showIcon, theme, type }) => css`
+  ${({ fullWidth, showIcon, theme, type }) => css`
+    flex: ${fullWidth ? 1 : 'none'};
     background-color: ${type === 'default'
       ? theme.palette.gray_6
       : type === 'good'
@@ -34,9 +39,9 @@ export const Icon = styled(Feather).attrs<TypeProps>(({ theme, type }) => ({
   right: 8
 }))``
 
-export const Title = styled.Text<TypeProps>`
-  ${({ theme }) => css`
-    font-size: ${theme.fontSize.xxl}px;
+export const Title = styled.Text<IconProps>`
+  ${({ showIcon, theme }) => css`
+    font-size: ${showIcon ? theme.fontSize.xxl : theme.fontSize.xl}px;
     font-family: ${theme.fontFamily.bold};
     color: ${theme.palette.gray_1};
   `}
